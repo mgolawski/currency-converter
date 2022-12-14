@@ -1,0 +1,7 @@
+.ErrorSummary {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  white-space: pre-wrap;
+}

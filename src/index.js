@@ -1,13 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
+import ErrorBoundary from "./components/ErrorBoundary";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const darkTheme = createTheme({
+  palette: {
+    type: "dark",
+  },
+});
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={darkTheme}>
+      <ErrorBoundary>
+        <CssBaseline />
+        <App />
+      </ErrorBoundary>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
